@@ -4,5 +4,6 @@ export const variables = defineEnvVars({
 	DATABASE_URL: {},
 	BETTER_AUTH_URL: {},
 	GOOGLE_CLIENT_ID: {},
-	GOOGLE_CLIENT_SECRET: {}
+	GOOGLE_CLIENT_SECRET: {},
+	BETTER_AUTH_SECRET: {}
 });
