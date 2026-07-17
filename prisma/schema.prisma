@@ -85,6 +85,7 @@ model Organization {
   members           Member[]
   invitations       Invitation[]
   organizationRoles OrganizationRole[]
+  email             String
 
   @@map("organization")
 }
@@ -126,4 +127,10 @@ model OrganizationRole {
   updatedAt      DateTime?    @db.Timestamptz(3)
 
   @@map("organizationRole")
+}
+
+model OrganizationCreationRequest {
+  id         String @id
+  email      String
+  teamNumber Int
 }

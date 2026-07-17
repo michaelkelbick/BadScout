@@ -25,6 +25,24 @@ export const auth = betterAuth({
 			clientId: GOOGLE_CLIENT_ID,
 			clientSecret: GOOGLE_CLIENT_SECRET
 		}
-	},
-	plugins: [organization(), admin(), sveltekitCookies(getRequestEvent)]
+  },
+  account: {
+    encryptOAuthTokens: true
+  },
+  plugins: [organization({
+    allowUserToCreateOrganization: () => false,
+    schema: {
+      organization: {
+        additionalFields: {
+          email: {
+            type: "string",
+            required: true
+          }
+        }
+      }
+    }
+	}), admin(), sveltekitCookies(getRequestEvent)]
 });
+
+
+export type AuthType = typeof auth;

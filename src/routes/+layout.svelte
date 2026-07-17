@@ -8,7 +8,6 @@
 
 	async function detectSWUpdate() {
 		const registration = await navigator.serviceWorker.ready;
-		console.log("?");
 		registration.addEventListener("updatefound", () => {
 			const newSW = registration.installing;
 			newSW?.addEventListener("statechange", () => {
